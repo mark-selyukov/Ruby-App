@@ -1,7 +1,11 @@
-<h1>This is a list of movies<h1>
+<h1>This is a list of movies</h1>
 
-<ul>
+<ol>
     <% @movies.each do |movie| %>
-        <li><%= movie %></li>
+        <li>
+            <strong><%= movie.title %></strong>
+            <div>Rating: <%= movie.rating %> </div>
+            <div>Total Grossing: <strong><%= number_to_currency(movie.total_gross) %></strong> </div>
+        </li>
     <% end %>
-</ul>
+</ol>
