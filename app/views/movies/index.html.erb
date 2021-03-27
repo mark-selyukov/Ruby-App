@@ -1,13 +1,13 @@
-<h1>This is a list of movies</h1>
+<h1> <%= pluralize(@movies.size, "movie") %> </h1>
 
 <ol>
     <% @movies.each do |movie| %>
         <li>
             <strong><%= movie.title %></strong>
             <div>Description: <%= movie.description %> </div>
-            <div>Release data: <%= movie.released_on %> </div>
+            <div>Release data: <%= movie.released_on.to_s(:release_date) %> </div>
             <div>Rating: <%= movie.rating %> </div>
-            <div>Total Grossing: <strong><%= number_to_currency(movie.total_gross) %></strong> </div>
+            <div>Total Grossing: <%= format_total_gross(movie) %> </div>
         </li>
     <% end %>
 </ol>
