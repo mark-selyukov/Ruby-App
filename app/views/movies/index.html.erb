@@ -4,7 +4,7 @@
     <% @movies.each do |movie| %>
         <li>
             <strong><%= movie.title %></strong>
-            <div>Description: <%= movie.description %> </div>
+            <div>Description: <%= truncate(movie.description, length: 40, separator: " ") %> </div>
             <div>Release data: <%= movie.released_on.to_s(:release_date) %> </div>
             <div>Rating: <%= movie.rating %> </div>
             <div>Total Grossing: <%= format_total_gross(movie) %> </div>
