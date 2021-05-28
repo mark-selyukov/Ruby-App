@@ -1,13 +1,13 @@
 <h1> <%= pluralize(@movies.size, "movie") %> </h1>
 
 <ol>
-    <% @movies.each do |movie| %>
-        <li>
-            <strong><%= link_to(movie.title, movie) %></strong>
-            <div>Description: <%= truncate(movie.description, length: 40, separator: " ") %> </div>
-            <div>Release data: <%= movie.released_on.to_s(:release_date) %> </div>
-            <div>Rating: <%= movie.rating %> </div>
-            <div>Total Grossing: <%= format_total_gross(movie) %> </div>
-        </li>
-    <% end %>
+  <% @movies.each do |movie| %>
+    <li>
+      <strong><%= link_to(movie.title, movie) %></strong>
+      <div>Description: <%= truncate(movie.description, length: 40, separator: " ") %> </div>
+      <div>Release data: <%= movie.released_on.to_s(:release_date) %> </div>
+      <div>Rating: <%= movie.rating %> </div>
+      <div>Total Grossing: <%= format_total_gross(movie) %> </div>
+    </li>
+  <% end %>
 </ol>
